@@ -5,4 +5,19 @@
  */
 export function createGetter(path) {
 
+	const sections = path.split(".");
+	  
+	  return function(obj){
+			
+			for(let sect of  sections){
+				
+				if(sect in obj && typeof obj[sect] == "object"){
+						obj = obj[sect];
+					} else if(sect in obj) {
+							return obj[sect];
+						} else return undefined;
+				}
+			
+			}
+
 }
