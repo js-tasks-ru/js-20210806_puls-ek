@@ -14,8 +14,7 @@ export function createGetter(path) {
 				if(sect in obj && typeof obj[sect] == "object"){
 						obj = obj[sect];
 					} else if(sect in obj) {
-							return obj[sect];
-						} else return undefined;
+							return obj[sect];} 
 				}
 			
 			}
