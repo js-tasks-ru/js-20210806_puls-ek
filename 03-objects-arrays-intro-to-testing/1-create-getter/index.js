@@ -7,16 +7,16 @@ export function createGetter(path) {
 
 	const sections = path.split(".");
 	  
-	  return function(obj){
+	 return function(obj){
 			
-			for(let sect of  sections){
+		let objLocal = obj;
+			
+		for(let sect of sections){
 				
-				if(sect in obj && typeof obj[sect] == "object"){
-						obj = obj[sect];
-					} else if(sect in obj) {
-							return obj[sect];} 
+			if(sect in objLocal && typeof objLocal[sect] === "object"){
+						objLocal = objLocal[sect];
+					} else if(sect in objLocal) {
+							return objLocal[sect];} 
 				}
-			
 			}
-
-}
+		}

@@ -8,7 +8,7 @@ export function trimSymbols(string, size) {
 
 			// проверки для теста
 			if(size == 0) { return ''; }
-			if(size == undefined) { return string; }
+			if(size === undefined) { return string; }
 
 			for(let i=0; i<string.length; i++){
 					string = searchDouble(string, size, i, string[i]);

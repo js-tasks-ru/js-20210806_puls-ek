@@ -5,14 +5,16 @@
  */
 export function invertObj(obj) {
 	
-	if(arguments.length > 0){
+	if(!obj) return;
+		
+	return Object.entries(obj).reduce((result, [key, value]) => {
+			result[value] = key;
+			return result;
+		}, {})
 	
-		const massTwo = (Object.entries(obj));
-						
-		massTwo.forEach((item, index, array) => {
-				item.sort(()=> -1); 
-			});				
-					
-		return Object.fromEntries(massTwo);
+		// ++ Старое решение
+		//const massTwo = Object.entries(obj);
+		//massTwo.forEach((item, index, array) => {item.sort(()=> -1); });				
+		//return Object.fromEntries(massTwo);
+		// -- Старое решение		
 	}
-}
