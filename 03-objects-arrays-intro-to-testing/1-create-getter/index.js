@@ -5,4 +5,18 @@
  */
 export function createGetter(path) {
 
-}
+	const sections = path.split(".");
+	  
+	 return function(obj){
+			
+		let objLocal = obj;
+			
+		for(let sect of sections){
+				
+			if(sect in objLocal && typeof objLocal[sect] === "object"){
+						objLocal = objLocal[sect];
+					} else if(sect in objLocal) {
+							return objLocal[sect];} 
+				}
+			}
+		}
